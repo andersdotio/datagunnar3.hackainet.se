@@ -28,7 +28,7 @@ function show_page()
 
 if (isset($_POST['password'])) {
 	// Jämför bara en del så vi inte behöver avslöja lösenordet!
-	if (substr(md5($_POST['password']), 0, 6) == 'dab00b') {
+	if (substr(md5($_POST['password']), 0, 6) == $secure_hash) {
 		print "Grattis! Du hittade flaggan: $flagga";
 		exit;
 	}
